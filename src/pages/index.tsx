@@ -8,31 +8,26 @@ import { Input } from "../components/Form/Input";
 type SignInFormData = {
   email: string;
   password: string;
-}
+};
 
 const signInFormSchema = yup.object().shape({
   email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
-  password: yup.string().required("Senha obrigatória")
-})
+  password: yup.string().required("Senha obrigatória"),
+});
 
 export default function Home() {
   const { register, handleSubmit, formState } = useForm({
-    resolver: yupResolver(signInFormSchema)
+    resolver: yupResolver(signInFormSchema),
   });
   const { errors } = formState;
 
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(values);
-  }
+  };
 
   return (
-    <Flex
-      w="100vw"
-      h="100vh"
-      align="center"
-      justify="center"
-    >
+    <Flex w="100vw" h="100vh" align="center" justify="center">
       <Flex
         as="form"
         width="100%"
