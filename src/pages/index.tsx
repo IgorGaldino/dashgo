@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { Input } from "../components/Form/Input";
+import { useRouter } from "next/router";
 
 type SignInFormData = {
   email: string;
@@ -12,7 +13,10 @@ type SignInFormData = {
 
 const signInFormSchema = yup.object().shape({
   email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
-  password: yup.string().required("Senha obrigatória"),
+  password: yup
+    .string()
+    .required("Senha obrigatória")
+    .min(6, "No mínimo 6 caracteres"),
 });
 
 export default function Home() {
@@ -21,9 +25,11 @@ export default function Home() {
   });
   const { errors } = formState;
 
+  const router = useRouter();
+
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(values);
+    router.push("/dashboard");
   };
 
   return (

@@ -16,6 +16,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Input } from "../../components/Form/Input";
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
+import { useRouter } from "next/router";
 
 type CreateUserFormData = {
   name: string;
@@ -43,9 +44,12 @@ export default function CreateUser() {
 
   const { errors } = formState;
 
+  const router = useRouter();
+
   const handleCreateUser: SubmitHandler<CreateUserFormData> = async (values) => {
     await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log(values);
+    console.log("Save", values);
+    router.push("/users")
   }
 
   return (
