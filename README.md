@@ -1,9 +1,9 @@
 ## Dashgo - Ignite
-Esta aplicação foi desenvolvida em um módulo do ignite. Ela teve como objetivo desenvolver aplicações utilizando o [chakra-ui](https://chakra-ui.com), uma biblioteca de componentes. Com o chakra-ui foi possível desenvolver uma aplicação com design agradável e responsivo. Apesar do HTML no JSX se tornado um pouco mais robusto por conta da estilização no próprio componente, o código fica mais claro e fácil de manutenção.
+Esta aplicação foi desenvolvida em um módulo do ignite. Ela teve como objetivo desenvolver aplicações utilizando o [chakra-ui](https://chakra-ui.com), uma biblioteca de componentes. Com o chakra-ui foi possível desenvolver uma aplicação com design agradável e responsivo. Apesar do HTML no JSX se tornado um pouco mais robusto por conta da estilização no próprio componente, o código fica mais claro e fácil de manutenção. Também foram utilizadas as bibliotecas do [react-hook-form](https://react-hook-form.com) e [yup](https://github.com/jquense/yup) para realizar as validações dos formulários.
 
-Além disso, foram utilizadas as bibliotecas do [react-hook-form](https://react-hook-form.com) e [yup](https://github.com/jquense/yup) para realizar as validações dos formulários.
+Além disso, foi implementado as técnicas de data fetching e cache local na listagem de usuário com req. Dessa foma, a tabela de usuário só exibirá o carregamento (enquanto espera os dados da API) se houver uma alteração na página da tabela.
 
-Essa aplicação foi mais focada no desenvolvimento de layouts com técnicas utilizadas atualmente.
+Como aplicação está utilizando apenas o front-end, foi adicionado algumas bibliotecas para simular uma API. Tais como: (i) [miragejs](https://miragejs.com) repensável pela simulação da API e (ii) [faker](https://fakerjs.dev) para geração de informações fake para teste.
 
 ### Conceitos e técnicas utilizadas
 
@@ -16,6 +16,10 @@ Essa aplicação foi mais focada no desenvolvimento de layouts com técnicas uti
 - [chakra-ui](https://chakra-ui.com)
 - [react-hook-form](https://react-hook-form.com)
 - [yup](https://github.com/)
+- [axios](https://axios-http.com)
+- [React Query](https://tanstack.com/query/v4/docs/overview)
+- [miragejs](https://miragejs.com)
+- [faker](https://fakerjs.dev)
 
 ### Páginas da aplicação:
 #### Tela de login com erro
